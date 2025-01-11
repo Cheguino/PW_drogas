@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mente Sana - Salud y Bienestar</title>
+  <link rel="stylesheet" href="Diseño.css">
+  <link rel="icon" href="Imagenes/Logo/favicon.ico" type="image/x-icon">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css" />
+</head>
+
+
+
+<body>
+  <nav>
+    <div class="container">
+      <ul><img src="Imagenes/Logo/logo.png" alt="logo" style="height: 60px;">
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#chatbot" onclick="location.href='ChatBot/index.html'">ChatBot</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <main>
+    <h2>Prevencion y tratamiento del abuso de sustancias adictivas</h2>
+    <br>
+    <div class="container">
+      <div class="slider">
+        <div class="video-wrapper">
+          <video id="video" src="Imagenes/Principal/Video.mp4" alt="Video infomativo" muted autoplay controls
+            style="width: 100%; height: 70vh;"></video>
+          <div class="audio-button" onclick="toggleAudio()">
+            <img src="Imagenes/Principal/Altavoz.png" alt="Activar audio" style="width: 50px; height: 50px;">
+            <span>Activar audio</span>
+          </div>
+        </div>
+        <div><img src="Imagenes/Principal/img1.jpg" alt="Imágen informativa" height="700" width="1200"></div>
+        <div><img src="Imagenes/Principal/img7.jpg" alt="Imágen informativa" height="700" width="1200"></div>
+        <div><img src="Imagenes/Principal/img2.jpg" alt="Imágen informativa" height="700" width="1200"></div>
+        <div><img src="Imagenes/Principal/img3.jpg" alt="Imágen informativa" height="700" width="1200"></div>
+        <div><img src="Imagenes/Principal/img4.jpg" alt="Imágen informativa" height="700" width="1200"></div>
+        <div><img src="Imagenes/Principal/img5.jpg" alt="Imágen informativa" height="700" width="1200"></div>
+        <div><img src="Imagenes/Principal/Objetivo3.jpg" alt="Imágen informativa" height="700" width="1200"></div>
+      </div>
+    </div>
+
+    <script>
+      var video = document.getElementById('video');
+      var audioButton = document.querySelector('.audio-button');
+
+      function toggleAudio() {
+        if (video.muted) {
+          video.muted = false;
+          audioButton.style.opacity = 0; // Ocultar el botón cuando se activa el audio
+        }
+      }
+
+      video.addEventListener('ended', function () {
+        video.currentTime = 0; // Reiniciar el video
+        video.muted = true; // Mute el video nuevamente
+        audioButton.style.opacity = 1; // Mostrar el botón de activar audio nuevamente
+        video.play(); // Reproducir el video nuevamente
+      });
+
+      $(document).ready(function () {
+        $('.slider').slick({
+          autoplay: true,
+          autoplaySpeed: 37000, // Duración del primer slide igual a la duración del video (37 segundos en milisegundos)
+          arrows: true,
+          dots: true,
+          fade: true,
+          speed: 1000,
+          cssEase: 'linear'
+        });
+
+        $('.slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+          if (currentSlide === 0) {
+            $('.slider').slick('slickSetOption', 'autoplaySpeed', 2000); // Cambiar la duración de los demás slides a 2 segundos
+          }
+        });
+      });
+    </script>
+
+    <style>
+      .video-wrapper {
+        position: relative;
+      }
+
+      .audio-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .audio-button img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .audio-button span {
+        margin-top: 10px;
+        font-size: 12px;
+      }
+    </style>
+
+
+
+
+
+
+
+
+    <section id="menu">
+      <section id="samhsa">
+        <div class="container">
+          <br>
+
+          <h2> Riesgos, Tratamiento y Prevención </h2> <br>
+
+          <p>El abuso de sustancias adictivas es un problema que afecta a muchas personas en todo el mundo.
+            Esta página web está dedicada a brindar información sobre la prevención y el tratamiento de
+            este tipo de abuso.</p>
+
+          <br>
+          <p>Te invitamos a explorar los diferentes apartados de nuestro sitio, donde encontrarás
+            artículos informativos, consejos prácticos y recursos adicionales
+            que te serán útiles en tu camino hacia una vida libre de adicciones.</p>
+          <br>
+
+          <div class="grid">
+
+            <div class="item box" onclick="location.href='Tabaco.html'">
+              <img src="Imagenes/Principal/Cigarro.png" alt="Tabaco">
+              <h3>Tabaco</h3>
+            </div>
+
+            <div class="item box" onclick="location.href='Alcohol.html'">
+              <img src="Imagenes/Principal/Alcohol.png" alt="Riesgo 2">
+              <h3>Alcohol</h3>
+            </div>
+
+            <div class="item box" onclick="location.href='Drogas.html'">
+              <img src="Imagenes/Principal/Drogas.png" alt="Riesgo 3">
+              <h3>Drogas</h3>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+    </section>
+
+
+    <hr>
+    <section id="recursos">
+      <div class="container">
+        <br>
+        <br>
+
+        <h2>Recursos</h2>
+        <br><br>
+        <p>En esta sección, encontrarás una variedad de recursos útiles relacionados con la prevención y el tratamiento
+          del abuso de sustancias adictivas. Estos recursos están diseñados para brindarte apoyo e información adicional
+          para enfrentar este desafío.</p>
+        <br>
+        <div class="card-list">
+          <div class="card">
+            <div class="card-content">
+              <img src="Imagenes/Principal/Folleto.png" alt="Folleto informativo">
+              <h3>Folleto informativo</h3>
+              <p>Descarga este folleto informativo para conocer más sobre los efectos del abuso de sustancias adictivas.
+              </p>
+              <a href="https://www.binasss.sa.cr/adolescencia/todas/Folleto%20que%20son%20las%20drogas.pdf" class="btn"
+                target="_blank">Descargar</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <img src="Imagenes/Principal/Guia.png" alt="Guía para familiares">
+              <h3>Guía para familiares</h3>
+              <p>Esta guía te ayudará a entender mejor cómo puedes ayudar a un familiar que está lidiando con problemas
+                de adicción.</p>
+              <a href="https://fundacionamigo.org/wp-content/uploads/2017/11/guia_familias_proyecto_amigo2017.pdf"
+                class="btn" target="_blank">Descargar</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <img src="Imagenes/Principal/Infografía.png" alt="Infografía">
+              <h3>Infografía</h3>
+              <p>Esta infografía te mostrará de manera visual las consecuencias que pueden tener el abuso de sustancias
+                adictivas.</p>
+              <a href="https://www.gob.mx/cms/uploads/attachment/file/246707/09_Infografia_CONSUMODEDROGAS_2017.pdf"
+                class="btn" target="_blank">Descargar</a>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <div class="card-content">
+              <img src="Imagenes/Principal/Video.png" alt="Vídeo informativo">
+              <h3>Vídeo informativo</h3>
+              <p>Este video muestra la historia de una persona con adicciones al alcohol, tabaco y drogas explicando las
+                consecuencias y cómo afectan en general.</p>
+              <a href="https://youtu.be/0rrcFX3C26o" class="btn" target="_blank">Visualizar</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+
+
+
+
+
+
+
+  <footer>
+    <div class="footer-section">
+      <p>Derechos reservados © 2023</p>
+    </div>
+    <div class="footer-section">
+      <p>Síguenos en:</p>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>

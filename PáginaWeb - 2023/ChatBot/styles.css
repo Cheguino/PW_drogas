@@ -1,0 +1,195 @@
+body {
+  background-image: url('https://img.freepik.com/free-vector/medical-icons-square-seamless-pattern_3446-414.jpg?w=826&t=st=1689692978~exp=1689693578~hmac=382fbaa7ba54f93d6936bc170bf11a4ec0637722e07244270b7e236681d1393c'); /* Agregar una imagen de fondo */
+  background-position: center; /* Centrar la imagen vertical y horizontalmente */
+  /* background-size: cover; /* Ajustar el tamaño de la imagen al contenedor */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  /* background-color: rgb(255, 255, 255); */
+  display: flex; /*  establece el cuerpo como un contenedor flexible */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  min-height: 100vh; /* Establece el alto mínimo del cuerpo al 100% de la ventana */
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://img.freepik.com/free-vector/medical-icons-square-seamless-pattern_3446-414.jpg?w=826&t=st=1689692978~exp=1689693578~hmac=382fbaa7ba54f93d6936bc170bf11a4ec0637722e07244270b7e236681d1393c');
+  background-position: center; /* Centrar la imagen vertical y horizontalmente */
+  filter: grayscale(100%);
+  z-index: -1;
+}
+
+.chat-container {
+  /* background-image: url('https://w0.peakpx.com/wallpaper/920/587/HD-wallpaper-whatsapp-app-fondo-sms-verde-wall-whatsapp.jpg'); /* Agregar una imagen de fondo */
+  /* background-size: cover; /* Ajustar el tamaño de la imagen al contenedor */
+  background-color: #ffffff;
+  width: 600px;
+  height: 700px; /* Ajusta la altura según tus necesidades */
+  margin: 50px auto;
+  border: 5px solid #000000;
+  box-shadow: 0 0 80px rgb(0, 0, 0); /* Agregar una sombra al hacer clic en el campo de texto */
+  border-radius: 8px;
+  animation: fadeIn 3s ease; /* Efecto de aparición gradual al cargar */
+  overflow: hidden; /* Ocultar el contenido desbordante */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.chat-header {
+  background-color: #1976D2; /* Cambio de color a azul */
+  padding: 10px;
+  color: white;
+  text-align: center;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.chat-header h2 {
+  margin: 0;
+}
+
+.chat-log {
+  padding: 10px;
+  height: 540px; /* Ajusta la altura máxima del área de registro */
+  overflow-y: auto; /* Agregar desplazamiento vertical cuando el contenido desborda */
+  animation: slideIn 1s ease; /* Efecto de deslizamiento al cargar */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.message {
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease; /* Efecto de aparición gradual para cada mensaje */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message .avatar {
+  border: 2px solid #000000; /* Cambiar el color del borde del avatar */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.message.received {
+  text-align: left;
+}
+
+.message.sent {
+  text-align: right;
+}
+
+.message.received .content {
+  background-color: #E3F2FD; /* Cambio de color a azul claro */
+  border-radius: 8px;
+  padding: 8px;
+  display: inline-block;
+  max-width: 70%;
+  animation: slideInLeft 0.5s ease; /* Efecto de deslizamiento para mensajes recibidos */
+}
+
+.message.sent .content {
+  background-color: #e9e7e7;
+  border-radius: 8px;
+  padding: 8px;
+  display: inline-block;
+  max-width: 70%;
+  animation: slideInRight 0.1s ease; /* Efecto de deslizamiento para mensajes enviados */
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-10px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(10px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.chat-input {
+  padding: 10px;
+  background-color: #E3F2FD; /* Cambio de color a azul claro */
+  display: flex;
+  animation: slideInUp 1s ease; /* Efecto de deslizamiento al cargar */
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.chat-input input[type="text"] {
+  flex-grow: 1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chat-input input[type="text"]:focus {
+  outline: none; /* Eliminar el contorno al hacer clic en el campo de texto */
+  border-color: #1976D2; /* Cambiar el color del borde al hacer clic en el campo de texto */
+  box-shadow: 0 0 3px rgba(25, 118, 210, 0.5); /* Agregar una sombra al hacer clic en el campo de texto */
+}
+
+.chat-input button {
+  padding: 6px 10px;
+  margin-left: 10px;
+  background-color: #1976D2; /* Cambio de color a azul */
+  border-color: #000000;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: #1565C0; /* Cambio de color a un tono más oscuro de azul */
+}
+
+/* Estilos para centrar el texto de los mensajes */
+.message .content {
+  text-align: left;
+}
