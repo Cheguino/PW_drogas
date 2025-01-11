@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatbot - Mente Sana</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" href="../Imagenes/Logo/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  
+  <div class="chat-container">
+    <div class="chat-header">
+      <img src="bot.png" height="40">
+      <h2>ChatBot - Mente Sana</h2>
+    </div>
+    <div class="chat-log" id="chat-log">
+      <!-- Mensaje inicial con el avatar del chatbot -->
+      <div class="message received">
+        <img src="bot.png" class="avatar">
+        <span class="content">¡Escribe un mensaje para comenzar!...</span>
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Escribe un mensaje..." />
+      <button id="send-button">Enviar</button>
+      <button id="back-button">Volver</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/compromise"></script>
+  <script src="script.js"></script>
+</body>
+</html>
